@@ -28,7 +28,7 @@ SECRET_KEY = getenv('SECRET_KEY', 'CHANGE')
 DEBUG = bool(int(getenv('DEBUG', 0)))
 
 ALLOWED_HOSTS = [
-    host for host in getenv('ALLOWED_HOSTS').split(',')
+    host for host in getenv('ALLOWED_HOSTS', '').split(',')
 ]
 
 
@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blog'
+    'blog',
+    'setup'
 ]
 
 MIDDLEWARE = [
