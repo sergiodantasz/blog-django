@@ -5,7 +5,8 @@
   "code-runner.runInTerminal": true,
   "code-runner.clearPreviousOutput": true,
   "code-runner.executorMap": {
-      "python": "clear ; python -u"
+    "javascript": "clear ; node",
+    "python": "clear ; python -u"
   },
   "code-runner.ignoreSelection": true,
   "editor.fontFamily": "Fira Code, 'Fira Code', monospace",
@@ -19,17 +20,22 @@
   "editor.tabSize": 2,
   "explorer.compactFolders": false,
   "[python]": {
-      "editor.defaultFormatter": "ms-python.black-formatter",
-      "editor.tabSize": 4,
-      "editor.insertSpaces": true,
-      "editor.codeActionsOnSave": {
-          "source.organizeImports": true
-      }
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
   },
   "python.languageServer": "Pylance",
   "[html]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode",
-      "editor.tabSize": 2
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
   },
   "workbench.colorTheme": "Dracula",
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "git.autofetch": true,
+  "git.confirmSync": false
 }
