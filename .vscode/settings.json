@@ -37,5 +37,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "git.autofetch": true,
-  "git.confirmSync": false
+  "git.confirmSync": false,
+  "files.eol": "\r\n"
 }
