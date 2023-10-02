@@ -9,7 +9,7 @@
     "python": "clear ; python -u"
   },
   "code-runner.ignoreSelection": true,
-  "editor.fontFamily": "Fira Code, 'Fira Code', monospace",
+  "editor.fontFamily": "FiraCode Nerd Font, 'FiraCode Nerd Font', monospace",
   "editor.renderWhitespace": "all",
   "liveServer.settings.donotShowInfoMsg": true,
   "python.defaultInterpreterPath": "./venv/Scripts/python.exe",
@@ -38,5 +38,8 @@
   },
   "git.autofetch": true,
   "git.confirmSync": false,
-  "files.eol": "\r\n"
+  "files.eol": "\r\n",
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "terminal.integrated.gpuAcceleration": "on",
+  "terminal.integrated.fontFamily": "FiraCode Nerd Font"
 }
