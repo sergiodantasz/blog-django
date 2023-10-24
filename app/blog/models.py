@@ -1,7 +1,7 @@
-from collections.abc import Iterable
 from django.contrib.auth.models import User
 from django.db import models
 
+from utils.images import resize_image
 from utils.randoms import new_slugify
 
 
@@ -102,7 +102,14 @@ class Post(models.Model):
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = new_slugify(self.title)
-        return super().save(*args, **kwargs)
+        current_favicon_name = str(self.cover.name)
+        save_ = super().save(*args, **kwargs)
+        cover_changed = False
+        if self.cover:
+            cover_changed = current_favicon_name != self.cover.name
+        if cover_changed:
+            resize_image(self.cover, 900)
+        return save_
 
     def __str__(self) -> str:
         return self.title
