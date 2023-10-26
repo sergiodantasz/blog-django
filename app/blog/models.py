@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User
 from django.db import models
+from django.urls import reverse
 from django_summernote.models import AbstractAttachment
 
 from utils.images import resize_image
@@ -124,6 +125,12 @@ class Post(models.Model):
         Category, on_delete=models.SET_NULL, null=True, blank=True, default=None
     )
     tag = models.ManyToManyField(Tag, blank=True, default='')
+
+    def get_absolute_url(self):
+        if not self.is_published:
+            return reverse('blog:index')
+        return reverse('blog:post', args=(self.slug,))
+    
 
     def save(self, *args, **kwargs):
         if not self.slug:
