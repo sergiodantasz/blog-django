@@ -40,7 +40,7 @@ class Tag(models.Model):
             self.slug = new_slugify(self.name)
         return super().save(*args, **kwargs)
 
-    def __str__(self) -> str:
+    def __str__(self) -> models.CharField:
         return self.name
 
 
@@ -59,7 +59,7 @@ class Category(models.Model):
             self.slug = new_slugify(self.name)
         return super().save(*args, **kwargs)
 
-    def __str__(self) -> str:
+    def __str__(self) -> models.CharField:
         return self.name
 
 
@@ -82,7 +82,7 @@ class Page(models.Model):
             self.slug = new_slugify(self.title)
         return super().save(*args, **kwargs)
 
-    def __str__(self) -> str:
+    def __str__(self) -> models.CharField:
         return self.title
 
 
@@ -130,7 +130,6 @@ class Post(models.Model):
         if not self.is_published:
             return reverse('blog:index')
         return reverse('blog:post', args=(self.slug,))
-    
 
     def save(self, *args, **kwargs):
         if not self.slug:
@@ -144,5 +143,5 @@ class Post(models.Model):
             resize_image(self.cover, 900)
         return save_
 
-    def __str__(self) -> str:
+    def __str__(self) -> models.CharField:
         return self.title
