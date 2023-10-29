@@ -4,16 +4,14 @@
       <h1 class="blog-title center pb-base">
         <a class="blog-link" href="/">{{ setup.title }}</a>
       </h1>
-
       {% if setup.show_description %}
         <p class="blog-description pb-base center">
           {{ setup.description }}
         </p>
       {% endif %}
-
       {% if setup.show_search %}
         <div class="search pb-base center">
-          <form class="search-form" action="#" method="get">
+          <form class="search-form" action="{% url "blog:search" %}" method="get">
             <div class="search-content">
               <label class="sr-only" id="search-label" for="search-input">Search</label>
               <input
@@ -22,7 +20,7 @@
                 name="search"
                 id="search-input"
                 placeholder="Search"
-                value="Non risu potius quam oratione eiciendum? Quo pleb "
+                value="{{ search_value }}"
               >
               <button class="search-btn" type="submit" aria-labelledby="search-label">
                 <i class="fa fa-search"></i>
@@ -31,7 +29,6 @@
           </form>
         </div>
       {% endif %}
-
       {% if setup.show_menu %}
         <nav class="menu">
           <ul class="menu-items">
