@@ -17,11 +17,9 @@
                   <i class="fa-solid fa-circle-chevron-up"></i>
                 </span>
               {% endif %}
-
               <span class="current" title="Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}" aria-current="page">
                 {{ page_obj.number }} / {{ page_obj.paginator.num_pages }}
               </span>
-
               {% if page_obj.has_next %}
                 <a title="Page {{ page_obj.next_page_number }}" aria-label="Page {{ page_obj.next_page_number }}" href="?page={{ page_obj.next_page_number }}{{ search_url }}">
                   <i class="fa-solid fa-circle-chevron-right"></i>
